@@ -1,4 +1,4 @@
-package com.xvitcoder.springmvcangularjs.service;
+package com.polomos.service;
 
 import org.springframework.stereotype.Service;
 

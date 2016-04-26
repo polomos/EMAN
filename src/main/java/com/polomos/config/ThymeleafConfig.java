@@ -1,4 +1,4 @@
-package com.xvitcoder.springmvcangularjs.config;
+package com.polomos.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

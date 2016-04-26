@@ -1,7 +1,8 @@
-package com.xvitcoder.springmvcangularjs.service;
+package com.polomos.service;
 
-import com.xvitcoder.springmvcangularjs.beans.Train;
 import org.springframework.stereotype.Service;
+
+import com.polomos.beans.Train;
 
 import java.util.ArrayList;
 import java.util.List;

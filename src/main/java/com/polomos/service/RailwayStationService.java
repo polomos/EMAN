@@ -1,8 +1,8 @@
-package com.xvitcoder.springmvcangularjs.service;
-
-import com.xvitcoder.springmvcangularjs.beans.RailwayStation;
+package com.polomos.service;
 
 import java.util.List;
+
+import com.polomos.beans.RailwayStation;
 
 
 public interface RailwayStationService {

@@ -1,4 +1,4 @@
-package com.xvitcoder.springmvcangularjs.config;
+package com.polomos.config;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
