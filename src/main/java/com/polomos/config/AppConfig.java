@@ -1,18 +1,14 @@
 package com.polomos.config;
 
-import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
-import org.hsqldb.util.DatabaseManagerSwing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
-/**
- * Created by xvitcoder on 12/24/15.
- */
 @Configuration
 @ComponentScan({"com.polomos"})
 public class AppConfig {
@@ -25,11 +21,17 @@ public class AppConfig {
 		return new JdbcTemplate(dataSource);
 	}
 	
-	@PostConstruct
-	public void startDBManager() {
-	
-		//hsqldb
-		DatabaseManagerSwing.main(new String[] { "--url", "jdbc:hsqldb:mem:testdb", "--user", "sa", "--password", "" });
-
+	@Bean
+	public NamedParameterJdbcTemplate getNamedParameterJdbcTemplate() {
+		return new NamedParameterJdbcTemplate(dataSource);
 	}
+	
+//	@PostConstruct
+//	public void startDBManager() {
+//	
+//		//hsqldb
+//		DatabaseManagerSwing.main(new String[] { "--url", "jdbc:hsqldb:mem:testdb", "--user", "sa", "--password", "" });
+//
+//	}
+	
 }

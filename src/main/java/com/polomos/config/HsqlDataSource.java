@@ -9,7 +9,6 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-@Profile("hsql")
 @Configuration
 public class HsqlDataSource {
 
@@ -20,9 +19,9 @@ public class HsqlDataSource {
 		// no need shutdown, EmbeddedDatabaseFactoryBean will take care of this
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		// @formatter:off
-		EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.HSQL)
-				.addScript("db/sql/create-db.sql")
-				.addScript("db/sql/insert-data.sql").build();
+		EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.HSQL).build();
+//				.addScript("db/sql/create-db.sql")
+//				.addScript("db/sql/insert-data.sql").build();
 		// @formatter:on
 		return db;
 	}

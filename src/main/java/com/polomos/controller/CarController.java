@@ -11,12 +11,7 @@ import com.polomos.service.CarService;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: xvitcoder
- * Date: 12/21/12
- * Time: 12:23 AM
- */
+
 @Controller
 @RequestMapping("/cars")
 public class CarController {

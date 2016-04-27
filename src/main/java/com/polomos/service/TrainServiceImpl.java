@@ -7,12 +7,6 @@ import com.polomos.beans.Train;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: xvitcoder
- * Date: 12/21/12
- * Time: 12:21 AM
- */
 @Service("trainService")
 public class TrainServiceImpl implements TrainService {
     private static List<Train> trainList = new ArrayList<Train>();
