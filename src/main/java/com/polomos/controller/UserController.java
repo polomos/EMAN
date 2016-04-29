@@ -21,8 +21,9 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = {"/list","/"}, method = RequestMethod.GET)
-    public @ResponseBody List<User> getUserList() {
-        return userService.getAllUsers();
+    public String getUserList() {
+        userService.getAllUsers();
+        return "welcome";
     }
 
     @RequestMapping(value = "/addUser/{user}", method = RequestMethod.POST)

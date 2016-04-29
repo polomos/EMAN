@@ -1,0 +1,59 @@
+<html>
+<body>
+	<div th:fragment="input_standard (field)">
+		<label th:attr="for=__${field}__" th:text="#{__${editPage}__.__${field}__}">Field*:</label>
+		<input type="text" th:field="*{__${field}__}" th:placeholder="#{__${editPage}__.__${field}__}" th:errorclass="fieldError" /> 
+		<span th:if="${#fields.hasErrors('__${field}__')}" th:errors="*{__${field}__}" th:class="fieldError">Incorrect value</span>
+	</div>
+	<div th:fragment="input_id (field)">
+		<div th:if="*{__${field}__} != 0">
+			<label class="editElemIdsLabels" th:attr="for=__${field}__" th:text="#{__${editPage}__.__${field}__}">ID:</label>
+			<input type="text" th:field="*{__${field}__}" readonly="readonly" spellcheck="false" th:placeholder="#{__${editPage}__.__${field}__}" hidden="hidden" />
+			<label class="editElemIds" th:text="*{__${field}__}" />
+		</div>
+	</div>
+	<div th:fragment="input_required (field)">
+		<label th:attr="for=__${field}__" th:text="#{__${editPage}__.__${field}__}+'*'">Field*:</label>
+		<input type="text" th:field="*{__${field}__}" th:placeholder="#{__${editPage}__.__${field}__}" th:errorclass="fieldError" />
+		<span th:if="${#fields.hasErrors('__${field}__')}" th:errors="*{__${field}__}" th:class="fieldError">Incorrect value</span>
+	</div>
+	<div th:fragment="input_upper_req (field)">
+		<label th:attr="for=__${field}__" th:text="#{__${editPage}__.__${field}__}+'*'">Field*:</label>
+		<input type="text" th:field="*{__${field}__}" th:placeholder="#{__${editPage}__.__${field}__}" th:errorclass="fieldError" class="upper" />
+		<span th:if="${#fields.hasErrors('__${field}__')}" th:errors="*{__${field}__}" th:class="fieldError">Incorrect value</span>
+		<script type="text/javascript" charset="utf-8">
+			$('.upper').blur(function(){
+		 this.value=this.value.toUpperCase();
+		});
+	</script>
+	</div>
+	<div th:fragment="input_pass (field)">
+		<label  th:attr="for=__${field}__" th:text="#{__${editPage}__.__${field}__}">Password:</label>
+		<input type="password" th:field="*{__${field}__}" th:placeholder="#{__${editPage}__.__${field}__}" th:errorclass="fieldError" />
+	</div>
+	
+	<div th:fragment="select_yes_no (field)">
+		<label  th:attr="for=__${field}__" th:text="#{__${editPage}__.__${field}__}">Field:</label>
+		<select th:field="*{__${field}__}">
+			<option th:value="1" th:text="#{common.yes}">YES</option>
+			<option th:value="0" th:text="#{common.no}">NO</option>
+		</select>
+	</div>	
+	
+	<div th:fragment="select_standard(field, options)">
+		<label  th:attr="for=__${field}__" th:text="#{__${editPage}__.__${field}__}">Field:</label>
+		<select th:field="*{__${field}__}">
+			<option th:each="item : ${options}" th:value="${item}"
+					th:text="${item}">Item</option>
+			</select>
+	</div>
+
+	<div th:fragment="select_defined(field, options, id, value)">
+		<label  th:attr="for=__${field}__" th:text="#{__${editPage}__.__${field}__}">Field:</label>		
+		<select th:field="*{__${field}__}">
+			<option th:each="item : ${options}" th:value="${item.__${id}__}"
+				th:text="${item.__${value}__}">Item</option>
+		</select>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.springframework.org/security/tags">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/resources/css/style.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/resources/css/jquery.dataTables.css}" />	
+<link rel="stylesheet" type="text/css" th:href="@{/resources/fancybox/jquery.fancybox.css}" />
+
+<link rel="stylesheet" type="text/css" th:href="@{/resources/css/jquery-ui.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/resources/css/dataTables.jqueryui.css}"/>
+
+
+<script type="text/javascript" th:src="@{/resources/js/jquery.js}" ></script>	
+
+<script type="text/javascript" th:src="@{/resources/fancybox/jquery.fancybox.js}" ></script>
+
+<script type="text/javascript" language="javascript" th:src="@{/resources/js/jquery.dataTables.js}"></script>
+<script type="text/javascript" language="javascript" th:src="@{/resources/js/jquery-ui.min.js}"></script>
+
+
+<!-- <script type="text/javascript" language="javascript" th:src="@{/resources/js/dataTables.jqueryui.js}"></script> -->
+<!-- 	<script type="text/javascript" language="javascript" src="../resources/syntax/shCore.js"></script>
+	<script type="text/javascript" language="javascript" src="../resources/demo.js"></script> -->
+
+</head>
+<body>
+	<div id="container" class="container" >
+
+		<div id="header" th:replace="fragments/header :: header">
+			<h1 style="margin-bottom: 0;">Main Title of Web Page</h1>
+		</div>
+		
+		<div id="menu" th:replace="fragments/menu :: menu">
+			<b>Menu</b><br /> Servers<br /> Locations<br /> Transfers
+		</div>
+		
+ 		<div id="breadcrumbsSection" th:replace="fragments/breadcrumbs :: breadcrumbs" >
+<!-- 			<span>Main >> edit page</span> -->
+ 		</div> 
+		
+		
+		
+			Content goes here:			
+		
+
+		<div id="footer" th:replace="fragments/footer :: footer">
+			Copyright
+		</div>
+	</div>
+</body>
+</html>
