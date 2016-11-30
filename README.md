@@ -16,7 +16,7 @@ Run Local (Embedded Tomcat):
 
 Run inside tomcat container
 -----------------------------
-Package it with maven
+Package it with maven(you can specify setting config with  --settings c:/Users/JPolom/.m2/settings.xml)
 
   - execute: *mvn clean package*
   - copy the result war file into your tomcat/webapp folder

@@ -8,8 +8,29 @@
     <name>AngularSpringApp Maven Webapp</name>
     <url>http://maven.apache.org</url>
     
+    <repositories>
+	    <repository>
+		    <id>spring-repo</id>
+		    <name>Spring Repository</name>
+		    <url>http://repo.spring.io/release</url>
+		</repository>
+		<repository>
+			<id>mvn repo</id>
+			<name>maven repo</name>
+			<url>https://mvnrepository.com/</url>
+		</repository>
+    </repositories>
+    <pluginRepositories>
+    	<pluginRepository>
+    		<id>spring-repo</id>
+		    <name>Spring Repository</name>
+		    <url>http://repo.spring.io/release</url>
+		    <releases><enabled>false</enabled></releases>
+    	</pluginRepository>
+    </pluginRepositories>
+    
     <properties>		
-		<spring.version>4.2.4.RELEASE</spring.version>
+		<spring.version>4.3.4.RELEASE</spring.version>
 		<thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
 		<hsqldb.version>2.3.2</hsqldb.version>
 		<junit.version>4.12</junit.version>

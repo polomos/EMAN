@@ -5,3 +5,4 @@ src/main/resources/rebel.xml
 .settings
 spring-mvc-angularjs.iml
 */**/.DS_Store
+*.*~
