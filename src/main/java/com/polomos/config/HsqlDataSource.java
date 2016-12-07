@@ -11,7 +11,6 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 @Configuration
 public class HsqlDataSource {
 
-	//jdbc:hsqldb:mem:testdb
 	@Bean
 	public DataSource dataSource() {
 		

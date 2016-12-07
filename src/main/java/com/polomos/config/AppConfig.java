@@ -25,13 +25,4 @@ public class AppConfig {
 	public NamedParameterJdbcTemplate getNamedParameterJdbcTemplate() {
 		return new NamedParameterJdbcTemplate(dataSource);
 	}
-	
-//	@PostConstruct
-//	public void startDBManager() {
-//	
-//		//hsqldb
-//		DatabaseManagerSwing.main(new String[] { "--url", "jdbc:hsqldb:mem:testdb", "--user", "sa", "--password", "" });
-//
-//	}
-	
 }
