@@ -34,6 +34,7 @@
 		<thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
 		<hsqldb.version>2.3.2</hsqldb.version>
 		<junit.version>4.12</junit.version>
+		<jackson.version>2.8.5</jackson.version>
 	</properties>
     
     <dependencies>
@@ -72,13 +73,13 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.1.0</version>
+            <version>${jackson.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.1.0</version>
+            <version>${jackson.version}</version>
         </dependency>
         
         <dependency>
@@ -121,7 +122,7 @@
                 <version>2.2</version>
                 <configuration>
                     <port>8080</port>
-                    <path>/springTestCase</path>
+                    <path>/eman</path>
                 </configuration>
             </plugin>
         </plugins>
