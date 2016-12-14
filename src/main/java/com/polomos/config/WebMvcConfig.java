@@ -9,16 +9,19 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.thymeleaf.spring4.SpringTemplateEngine;
+import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.polomos")
-@Import({ThymeleafConfig.class})
+@ComponentScan(basePackages = "com.polomos.controller")
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
@@ -44,4 +47,24 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     	messageBundle.setBasename("classpath:locale/messages");
     	return messageBundle;
     }
+    
+    @Bean
+    public ServletContextTemplateResolver templateResolver() {
+        ServletContextTemplateResolver resolver = new ServletContextTemplateResolver();
+        resolver.setPrefix("/WEB-INF/html/");
+        resolver.setSuffix(".html");
+        resolver.setTemplateMode("HTML5");
+        resolver.setCacheable(false);
+        return resolver;
+    }
+
+
+    @Bean
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/WEB-INF/html/");
+        viewResolver.setSuffix(".html");
+        return viewResolver;
+    }
+
 }
